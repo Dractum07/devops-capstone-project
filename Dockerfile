@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 # Create working directory
 WORKDIR /app
@@ -16,4 +16,4 @@ USER theia
 
 # Expose the service port and start the app
 EXPOSE 8080
-CMD ["gunicorn", "--bind=0.0.0.0:8080", "--log-level=info", "service:app"]
+CMD ["gunicorn", "--bind=0.0.0.0:8080", "--log-level=info", "service:create_app()"]
